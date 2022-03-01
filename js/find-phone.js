@@ -27,7 +27,7 @@ const displayPhone = (phones) => {
                 <div class="card-body">
                     <h5 class="card-title">${phone.phone_name}</h5>
                     <p>Brand: ${phone.brand}</p>
-                    <button class="btn btn-primary" onclick="phoneDeteils()"> Deteils</button>
+                    <button class="btn btn-primary" onclick="phoneDeteils('${phone.slug}')"> Deteils</button>
                 </div>
                 </div>
            `
@@ -36,12 +36,18 @@ const displayPhone = (phones) => {
         });
    }   
 };
-const phoneDeteils = () =>{
-    const url = ` `
+const phoneDeteils = (phoneId) =>{
+    console.log(phoneId)
+    const url = ` https://openapi.programming-hero.com/api/phone/${phoneId}`
+    fetch(url)
+        .then(res => res.json())
+        .then(data => phoneDeteilsDisplay(data.data))
 }
 
 
-const phoneDeteilsDisplay = () => {
+const phoneDeteilsDisplay = (phone) => {
+
+    console.log(phone)
     const phoneDet = document.getElementById('phone-details');
     phoneDet.textContent = '';
     const div = document.createElement('div');
