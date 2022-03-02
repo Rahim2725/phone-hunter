@@ -43,42 +43,28 @@ const phoneDeteils = (phoneId) =>{
         .then(data => phoneDeteilsDisplay(data.data))
 }
 
-
+// phone display deteils
 const phoneDeteilsDisplay = (phone) => {
-    console.log(phone)
-    console.log(phone.mainFeatures.storage);
+    // phone Deteils 
     const phoneDeteils = document.getElementById('phone-details');
     phoneDeteils.textContent ='';
     const div = document.createElement('div');
     div.innerHTML = `
     <div class="card mb-3" style="max-width: 540px;">
-    <div class="row g-0">
+    <div class="row g-0 d-flex align-items-center">
     <div class="col-md-4">
-        <img src="${phone.image}" class="img-fluid rounded-start" alt="...">
+        <img src="${phone.image}"  class="   rounded-start" alt="...">
     </div>
     <div class="col-md-8">
         <div class="card-body">
         <h5 class="card-title">${phone.name}</h5>
         <p class="card-text mb-0">${phone?.releaseDate || 'Not found'}</p>
         <p>Brand: ${phone.brand}</p>
-        <p>Storage: ${phone.mainFeatures.storage}, chipSet: ${phone.mainFeatures.chipSet}</p>
+        <p>Storage: ${phone.mainFeatures.storage}, <br> chipSet: ${phone.mainFeatures.chipSet} </p>
         </div>
     </div>
     </div>
     </div>
     `
     phoneDeteils.appendChild(div);
-
-
-    
 }
-
-
-// if(phone.releaseDate.length !== []){
-//     const phoneReleasedate = phone.releaseDate ;
-//     document.getElementById('releaseDate').innerText = phoneReleasedate; 
-// }
-// else{
-//     const releaseDate = 'Not Found Release Date';
-//     document.getElementById('releaseDate').innerText = releaseDate; 
-// }
