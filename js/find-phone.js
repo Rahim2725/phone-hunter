@@ -16,6 +16,8 @@ const displayPhone = (phones) => {
     searchResult.textContent = '';
     if( phones.length == []){
        document.getElementById('not-found').style.display = 'block';
+       const phoneDeteils = document.getElementById('phone-details');
+       phoneDeteils.textContent ='';
     }
    else{
         phones.forEach(phone => {
