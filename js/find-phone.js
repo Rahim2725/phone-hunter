@@ -1,8 +1,9 @@
 const  searchPhone = () =>{
     const searchFiled = document.getElementById('search-filed');
     const searchText = searchFiled.value ;
-    const search = searchText.toLowerCase() ;
     searchFiled.value = '';
+
+    const search = searchText.toLowerCase() ;
     const url = `https://openapi.programming-hero.com/api/phones?search=${search}`
     
     fetch(url)
@@ -32,6 +33,8 @@ const displayPhone = (phones) => {
            `
             searchResult.appendChild(div);
             document.getElementById('not-found').style.display = 'none';
+            const phoneDeteils = document.getElementById('phone-details');
+            phoneDeteils.textContent ='';
         });
    }   
 };
@@ -48,6 +51,7 @@ const phoneDeteilsDisplay = (phone) => {
     // phone Deteils 
     const phoneDeteils = document.getElementById('phone-details');
     phoneDeteils.textContent ='';
+
     const div = document.createElement('div');
     div.innerHTML = `
     <div class="card mb-3" style="max-width: 540px;">
