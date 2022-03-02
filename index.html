@@ -15,21 +15,23 @@
     <header>
         <h1 class="text-center find-phone mt-4">Find The Phone</h1>
         <div class="input-group mb-3 w-50 mx-auto search">
-            
+
             <input id="search-filed" type="text" class="form-control" placeholder="Please Find Phone">
 
             <!-- search button  -->
             <button class="btn btn-primary" type="button" onclick="searchPhone()">Search</button>
           </div>
-          <!-- phone deteils area  -->
-          <div class="w-50  mx-auto" id="phone-details"></div>
+          
     </header>
 
     <main>
-        <div class=" container mt-4">
+        <div id="search-result" class=" container mt-4">
+            <!-- phone deteils area  -->
+          <div class="w-50  mx-auto" id="phone-details"></div>
+
             <h1 id="not-found">Not Found 404 </h1>
             <!-- search result area  -->
-             <div id="search-result" class="row row-cols-1 row-cols-md-3  g-4">
+             <div  class="row row-cols-1 row-cols-md-3  g-4">
                 
             </div>
         </div> 
